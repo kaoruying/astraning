@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>主任必修課程｜晉升後3～6個月增員培訓課程</title>
 
   <style>
@@ -7,11 +12,15 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: "Microsoft JhengHei", "Noto Sans TC", Arial, sans-serif;
       background:
-        radial-gradient(circle at 15% 10%, rgba(0, 145, 255, 0.45), transparent 28%),
-        radial-gradient(circle at 85% 15%, rgba(255, 153, 0, 0.35), transparent 24%),
+        radial-gradient(circle at 15% 10%, rgba(0, 145, 255, 0.42), transparent 28%),
+        radial-gradient(circle at 85% 15%, rgba(255, 153, 0, 0.32), transparent 24%),
         linear-gradient(135deg, #031026 0%, #071c44 48%, #020817 100%);
       color: #ffffff;
       overflow-x: hidden;
@@ -22,8 +31,8 @@
       position: fixed;
       inset: 0;
       background-image:
-        linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+        linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px);
       background-size: 44px 44px;
       pointer-events: none;
       opacity: 0.45;
@@ -35,15 +44,15 @@
       z-index: 1;
       max-width: 1180px;
       margin: 0 auto;
-      padding: 36px 18px 56px;
+      padding: 42px 18px 56px;
     }
 
     .hero {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 32px;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 34px;
       align-items: center;
-      min-height: 640px;
+      min-height: 620px;
     }
 
     .badge {
@@ -51,19 +60,19 @@
       align-items: center;
       gap: 8px;
       padding: 9px 18px;
-      border: 1px solid rgba(255, 199, 87, 0.8);
+      border: 1px solid rgba(255, 199, 87, 0.85);
       border-radius: 999px;
       background: rgba(255, 170, 35, 0.13);
       color: #ffe3a1;
-      font-weight: 800;
+      font-weight: 900;
       letter-spacing: 1px;
       box-shadow: 0 0 22px rgba(255, 171, 35, 0.18);
     }
 
     h1 {
       margin-top: 24px;
-      font-size: clamp(48px, 7vw, 82px);
-      line-height: 1.05;
+      font-size: clamp(44px, 6.5vw, 78px);
+      line-height: 1.08;
       font-weight: 950;
       letter-spacing: -2px;
       text-shadow: 0 8px 28px rgba(0,0,0,0.5);
@@ -72,41 +81,44 @@
     .gold {
       background: linear-gradient(135deg, #fff1b8, #ffad2f 45%, #ff6f00);
       -webkit-background-clip: text;
+      background-clip: text;
       color: transparent;
       filter: drop-shadow(0 0 12px rgba(255, 167, 38, 0.3));
     }
 
     .subtitle {
-      margin-top: 20px;
-      font-size: clamp(21px, 2.2vw, 30px);
-      font-weight: 900;
+      margin-top: 22px;
+      font-size: clamp(22px, 2.3vw, 32px);
+      font-weight: 950;
       color: #ffd873;
+      line-height: 1.45;
     }
 
     .lead {
       margin-top: 20px;
-      max-width: 680px;
-      color: rgba(236, 246, 255, 0.92);
+      max-width: 700px;
+      color: rgba(236, 246, 255, 0.93);
       font-size: 18px;
-      line-height: 1.9;
+      line-height: 1.95;
       font-weight: 500;
     }
 
     .highlight {
-      margin-top: 26px;
+      margin-top: 28px;
       padding: 18px 22px;
       border-radius: 22px;
       border: 1px solid rgba(255, 203, 93, 0.75);
       background: linear-gradient(90deg, rgba(255, 164, 28, 0.28), rgba(255, 111, 0, 0.18));
       box-shadow: 0 12px 35px rgba(255, 128, 0, 0.16);
-      font-size: clamp(20px, 2.3vw, 30px);
+      font-size: clamp(20px, 2.2vw, 30px);
       font-weight: 950;
       color: #fff0bd;
+      line-height: 1.5;
     }
 
     .visual-card {
       position: relative;
-      border-radius: 32px;
+      border-radius: 34px;
       padding: 28px;
       border: 1px solid rgba(161, 207, 255, 0.35);
       background: rgba(255,255,255,0.09);
@@ -128,7 +140,7 @@
     .rocket {
       position: relative;
       height: 360px;
-      border-radius: 26px;
+      border-radius: 28px;
       background:
         radial-gradient(circle at 72% 28%, rgba(255, 193, 7, 0.55), transparent 18%),
         linear-gradient(160deg, rgba(10, 45, 100, 0.95), rgba(2, 12, 31, 0.9));
@@ -182,14 +194,17 @@
 
     .mini-title {
       margin-top: 24px;
-      font-size: 26px;
+      font-size: 28px;
       font-weight: 950;
+      line-height: 1.35;
     }
 
     .mini-desc {
-      margin-top: 10px;
+      margin-top: 12px;
       color: rgba(229, 241, 255, 0.86);
-      line-height: 1.7;
+      line-height: 1.8;
+      font-size: 16px;
+      font-weight: 600;
     }
 
     @keyframes float {
@@ -214,6 +229,7 @@
       margin-bottom: 22px;
       font-size: clamp(28px, 3vw, 42px);
       font-weight: 950;
+      line-height: 1.3;
     }
 
     .number {
@@ -253,7 +269,7 @@
 
     .pain-card p {
       font-weight: 850;
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
     .course-grid {
@@ -275,13 +291,14 @@
       font-size: 32px;
       font-weight: 950;
       color: #0a2f70;
+      line-height: 1.3;
     }
 
     .course-card .focus {
       margin-top: 8px;
       font-weight: 900;
       color: #e67400;
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
     .course-card ul {
@@ -313,6 +330,7 @@
       justify-content: center;
       font-weight: 950;
       flex-shrink: 0;
+      margin-top: 1px;
     }
 
     .r-layout {
@@ -341,6 +359,7 @@
       display: flex;
       align-items: center;
       gap: 12px;
+      font-family: inherit;
     }
 
     .r-btn:hover,
@@ -378,15 +397,20 @@
       width: 220px;
       height: 220px;
       background: radial-gradient(circle, rgba(255, 165, 0, 0.35), transparent 68%);
+      pointer-events: none;
     }
 
     .r-display h3 {
+      position: relative;
+      z-index: 1;
       font-size: 46px;
       color: #0a2f70;
       font-weight: 950;
     }
 
     .r-display h4 {
+      position: relative;
+      z-index: 1;
       margin-top: 10px;
       font-size: 26px;
       color: #e67400;
@@ -394,6 +418,8 @@
     }
 
     .r-display .desc {
+      position: relative;
+      z-index: 1;
       margin-top: 18px;
       font-size: 18px;
       line-height: 1.75;
@@ -402,11 +428,15 @@
     }
 
     .info-box {
+      position: relative;
+      z-index: 1;
       margin-top: 18px;
       padding: 18px;
       border-radius: 20px;
       background: #eef6ff;
       border-left: 7px solid #ff9d16;
+      line-height: 1.65;
+      font-weight: 650;
     }
 
     .info-box b {
@@ -483,6 +513,7 @@
     .question-title {
       font-weight: 950;
       margin-bottom: 10px;
+      line-height: 1.5;
     }
 
     .option {
@@ -497,6 +528,8 @@
       font-weight: 750;
       color: #19304f;
       transition: 0.2s;
+      font-family: inherit;
+      font-size: 15px;
     }
 
     .option:hover,
@@ -532,10 +565,27 @@
       color: #ffffff;
     }
 
+    .target-box {
+      margin-top: 26px;
+      padding: 20px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .target-box h3 {
+      font-size: 24px;
+    }
+
+    .target-box p {
+      margin-top: 10px;
+      line-height: 1.8;
+      font-weight: 800;
+    }
+
     .cta {
       margin-top: 42px;
       text-align: center;
-      padding: 44px 28px;
+      padding: 46px 28px;
       border-radius: 36px;
       border: 1px solid rgba(255, 210, 107, 0.55);
       background:
@@ -554,43 +604,8 @@
     .cta p {
       font-size: 22px;
       line-height: 1.8;
-      font-weight: 800;
-      color: rgba(255,255,255,0.9);
-    }
-
-    .cta-buttons {
-      margin-top: 28px;
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      border: none;
-      padding: 16px 28px;
-      border-radius: 16px;
-      cursor: pointer;
-      font-size: 18px;
-      font-weight: 950;
-      transition: 0.25s;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #ffd66b, #ff8a00);
-      color: #06142f;
-      box-shadow: 0 14px 30px rgba(255, 145, 0, 0.28);
-    }
-
-    .btn-secondary {
-      background: rgba(255,255,255,0.13);
-      color: white;
-      border: 1px solid rgba(255,255,255,0.35);
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      filter: brightness(1.05);
+      font-weight: 850;
+      color: rgba(255,255,255,0.92);
     }
 
     .footer-note {
@@ -623,7 +638,7 @@
 
     @media (max-width: 620px) {
       .page {
-        padding: 24px 14px 42px;
+        padding: 26px 14px 42px;
       }
 
       .section {
@@ -651,12 +666,17 @@
 
       .course-card,
       .quiz-card,
-      .r-display {
+      .r-display,
+      .result-box {
         padding: 22px;
       }
 
+      .r-display h3 {
+        font-size: 38px;
+      }
+
       .cta {
-        padding: 34px 20px;
+        padding: 36px 20px;
       }
     }
   </style>
@@ -681,7 +701,8 @@
           而是開始面對增員、推進增員，並建立屬於自己的增員節奏。
           這堂課以公司 R 線增員流程為主軸，
           從 R1 取得名單到 R6 新人報聘，
-          系統化培養主任在各階段需要具備的增員能力。
+          系統化培養主任在各階段需要具備的增員能力，
+          幫助你從「會做業務」走向「會推進增員」。
         </p>
 
         <div class="highlight">
@@ -719,18 +740,22 @@
           <div class="icon">📍</div>
           <p>想增員，卻不知道從哪裡開始</p>
         </div>
+
         <div class="pain-card">
           <div class="icon">👥</div>
           <p>有名單，卻不知道怎麼接觸與往下推</p>
         </div>
+
         <div class="pain-card">
           <div class="icon">💬</div>
           <p>會聊天，卻不一定能發掘準增需求</p>
         </div>
+
         <div class="pain-card">
           <div class="icon">⚠️</div>
           <p>邀約常卡住，異議來了不知如何處理</p>
         </div>
+
         <div class="pain-card">
           <div class="icon">⏱️</div>
           <p>想把增員做穩，卻缺少完整方法與節奏</p>
@@ -748,6 +773,7 @@
         <div class="course-card">
           <h3>主任經典基礎班</h3>
           <div class="focus">聚焦增員起步與基本功建立｜打穩 R1～R2 基礎能力</div>
+
           <ul>
             <li>看懂 R 線全貌</li>
             <li>建立緣故名單與推薦人名單</li>
@@ -761,6 +787,7 @@
         <div class="course-card">
           <h3>主任進階班</h3>
           <div class="focus">聚焦需求挖掘與推進能力｜強化 R2～R4 關鍵做法</div>
+
           <ul>
             <li>學會網路增員與陌生開發</li>
             <li>學會發掘準增需求與六大面向提問</li>
@@ -783,18 +810,23 @@
           <button class="r-btn active" onclick="showR(0, this)">
             <span class="r-code">R1</span> 取得名單
           </button>
+
           <button class="r-btn" onclick="showR(1, this)">
             <span class="r-code">R2</span> 啟動接觸
           </button>
+
           <button class="r-btn" onclick="showR(2, this)">
             <span class="r-code">R3</span> 發掘需求
           </button>
+
           <button class="r-btn" onclick="showR(3, this)">
             <span class="r-code">R4</span> 邀約推進
           </button>
+
           <button class="r-btn" onclick="showR(4, this)">
             <span class="r-code">R5</span> 面談追蹤
           </button>
+
           <button class="r-btn" onclick="showR(5, this)">
             <span class="r-code">R6</span> 新人報聘
           </button>
@@ -803,6 +835,7 @@
         <div class="r-display">
           <h3 id="rCode">R1</h3>
           <h4 id="rTitle">取得名單</h4>
+
           <p class="desc" id="rDesc">
             建立緣故名單、推薦人名單，讓增員不是想到才做，而是有來源、有紀錄、有追蹤。
           </p>
@@ -867,6 +900,7 @@
       <div class="quiz-wrap">
         <div class="quiz-card">
           <h3>主任增員卡點檢測</h3>
+
           <p class="quiz-desc">
             請選出最接近你目前狀態的選項，完成後會出現建議學習方向。
           </p>
@@ -895,7 +929,7 @@
             <button class="option" onclick="selectOption(2, 'advance', this)">想做出固定成果</button>
           </div>
 
-          <button class="btn btn-primary" style="width:100%; margin-top:22px;" onclick="showResult()">
+          <button class="option" style="margin-top:22px; text-align:center; background:#fff1d7; color:#d86600; border-color:#ff9d16;" onclick="showResult()">
             查看建議課程
           </button>
         </div>
@@ -908,9 +942,9 @@
             </div>
           </div>
 
-          <div style="margin-top:26px; padding:20px; border-radius:22px; background:rgba(255,255,255,0.1);">
-            <h3 style="font-size:24px;">適合對象</h3>
-            <p style="margin-top:10px; line-height:1.8; font-weight:800;">
+          <div class="target-box">
+            <h3>適合對象</h3>
+            <p>
               新晉升主任 3～6 個月內<br />
               想穩住角色、建立方法、養成節奏、做出成果。
             </p>
@@ -924,19 +958,11 @@
         從業務高手，<br />
         到 <span class="gold">增員推手</span>
       </h2>
+
       <p>
         主任經典基礎班 × 主任進階班<br />
         邀請你在晉升後的關鍵時刻，打穩增員實戰力。
       </p>
-
-      <div class="cta-buttons">
-        <button class="btn btn-primary" onclick="alert('可在這裡串接報名表連結')">
-          我要報名課程
-        </button>
-        <button class="btn btn-secondary" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-          回到課程介紹
-        </button>
-      </div>
     </section>
 
     <div class="footer-note">
