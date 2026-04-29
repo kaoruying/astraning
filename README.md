@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-  <html lang="zh-Hant">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>主任必修課程｜晉升後3～6個月增員培訓課程</title>
 
   <style>
