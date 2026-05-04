@@ -187,7 +187,7 @@
       pointer-events: none;
     }
 
-    .mission-card {
+    .growth-card {
       position: relative;
       z-index: 1;
       border-radius: 30px;
@@ -202,7 +202,7 @@
       box-shadow: inset 0 0 46px rgba(0,0,0,0.34);
     }
 
-    .mission-card::before {
+    .growth-card::before {
       content: "";
       position: absolute;
       inset: 0;
@@ -213,7 +213,7 @@
       opacity: 0.58;
     }
 
-    .mission-top {
+    .growth-top {
       position: relative;
       z-index: 2;
       display: flex;
@@ -222,7 +222,7 @@
       gap: 16px;
     }
 
-    .mission-title {
+    .growth-title {
       display: inline-flex;
       padding: 10px 14px;
       border-radius: 999px;
@@ -233,18 +233,18 @@
       font-weight: 900;
     }
 
-    .mission-score {
+    .growth-score {
       text-align: right;
     }
 
-    .mission-score b {
+    .growth-score b {
       display: block;
       font-size: 36px;
       color: #ffd873;
       line-height: 1;
     }
 
-    .mission-score span {
+    .growth-score span {
       display: block;
       margin-top: 6px;
       font-size: 14px;
@@ -255,9 +255,9 @@
     .growth-area {
       position: relative;
       z-index: 2;
-      height: 220px;
-      margin-top: 26px;
-      border-radius: 26px;
+      height: 300px;
+      margin-top: 34px;
+      border-radius: 28px;
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.12);
       overflow: hidden;
@@ -266,12 +266,12 @@
     .growth-area::after {
       content: "";
       position: absolute;
-      right: 18%;
-      top: 22%;
-      width: 125px;
-      height: 125px;
+      right: 14%;
+      top: 14%;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 210, 83, 0.3), transparent 70%);
+      background: radial-gradient(circle, rgba(255, 210, 83, 0.34), transparent 70%);
       filter: blur(2px);
     }
 
@@ -316,20 +316,20 @@
 
     .bar-group {
       position: absolute;
-      left: 8%;
-      bottom: 24px;
+      left: 9%;
+      bottom: 38px;
       width: 48%;
-      height: 155px;
+      height: 210px;
       display: flex;
       align-items: flex-end;
-      gap: 14px;
+      gap: 16px;
       z-index: 4;
     }
 
     .growth-bar {
       flex: 1;
-      max-width: 48px;
-      border-radius: 16px 16px 8px 8px;
+      max-width: 56px;
+      border-radius: 18px 18px 8px 8px;
       background: linear-gradient(180deg, #55d6ff 0%, #178ce8 58%, #0b61c6 100%);
       box-shadow: 0 0 24px rgba(74, 202, 255, 0.45);
       transform-origin: bottom;
@@ -337,10 +337,10 @@
       transform: scaleY(0);
     }
 
-    .growth-bar:nth-child(1) { height: 58px; animation-delay: 0.15s; }
-    .growth-bar:nth-child(2) { height: 88px; animation-delay: 0.3s; }
-    .growth-bar:nth-child(3) { height: 122px; animation-delay: 0.45s; }
-    .growth-bar:nth-child(4) { height: 152px; animation-delay: 0.6s; }
+    .growth-bar:nth-child(1) { height: 70px; animation-delay: 0.15s; }
+    .growth-bar:nth-child(2) { height: 110px; animation-delay: 0.3s; }
+    .growth-bar:nth-child(3) { height: 150px; animation-delay: 0.45s; }
+    .growth-bar:nth-child(4) { height: 195px; animation-delay: 0.6s; }
 
     @keyframes growBar {
       to {
@@ -361,13 +361,13 @@
       position: absolute;
       z-index: 3;
       left: 13%;
-      right: 9%;
-      top: 108px;
-      height: 13px;
+      right: 10%;
+      top: 150px;
+      height: 15px;
       border-radius: 999px;
       background: linear-gradient(90deg, #ffd86a, #ffad2f, #ff7b00);
       box-shadow: 0 0 30px rgba(255, 168, 38, 0.55);
-      transform: rotate(-16deg);
+      transform: rotate(-18deg);
       transform-origin: left center;
       opacity: 1;
       animation: arrowSlide 1.2s ease both;
@@ -376,12 +376,12 @@
     .growth-arrow::after {
       content: "";
       position: absolute;
-      right: -15px;
-      top: -16px;
-      width: 42px;
-      height: 42px;
-      border-top: 13px solid #ff9d16;
-      border-right: 13px solid #ff9d16;
+      right: -16px;
+      top: -18px;
+      width: 46px;
+      height: 46px;
+      border-top: 15px solid #ff9d16;
+      border-right: 15px solid #ff9d16;
       border-radius: 6px;
       transform: rotate(25deg);
     }
@@ -389,58 +389,38 @@
     @keyframes arrowSlide {
       from {
         opacity: 0;
-        transform: rotate(-16deg) translateX(-50px);
+        transform: rotate(-18deg) translateX(-50px);
       }
       to {
         opacity: 1;
-        transform: rotate(-16deg) translateX(0);
+        transform: rotate(-18deg) translateX(0);
       }
     }
 
-    .mission-flow {
+    .growth-caption-box {
       position: relative;
       z-index: 2;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-      margin-top: 18px;
+      margin-top: 22px;
+      padding: 18px 20px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
     }
 
-    .mission-step {
-      padding: 15px 8px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.11);
-      border: 1px solid rgba(255,255,255,0.18);
-      text-align: center;
-      animation: stepPop 0.7s ease forwards;
-      opacity: 0;
-      transform: translateY(14px);
-    }
-
-    .mission-step:nth-child(1) { animation-delay: 0.85s; }
-    .mission-step:nth-child(2) { animation-delay: 1s; }
-    .mission-step:nth-child(3) { animation-delay: 1.15s; }
-    .mission-step:nth-child(4) { animation-delay: 1.3s; }
-
-    @keyframes stepPop {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .mission-step b {
+    .growth-caption-box strong {
       display: block;
       color: #ffd873;
       font-size: 24px;
-      margin-bottom: 6px;
+      line-height: 1.4;
+      margin-bottom: 8px;
     }
 
-    .mission-step span {
+    .growth-caption-box span {
+      display: block;
       color: rgba(236,246,255,0.9);
-      font-size: 15px;
-      font-weight: 900;
-      line-height: 1.35;
+      font-size: 18px;
+      line-height: 1.7;
+      font-weight: 650;
     }
 
     .panel-caption {
@@ -530,105 +510,102 @@
       font-size: 18px;
     }
 
-    .r-layout {
+    .accordion {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 26px;
-      align-items: stretch;
+      gap: 14px;
     }
 
-    .r-buttons {
-      display: grid;
-      gap: 12px;
-    }
-
-    .r-btn {
+    .accordion-item {
+      border-radius: 24px;
+      overflow: hidden;
       border: 1px solid rgba(255,255,255,0.18);
       background: rgba(255,255,255,0.1);
-      color: white;
-      padding: 17px;
-      border-radius: 20px;
+      box-shadow: 0 16px 34px rgba(0,0,0,0.16);
+    }
+
+    .accordion-button {
+      width: 100%;
+      border: 0;
+      background:
+        linear-gradient(90deg, rgba(255, 168, 38, 0.24), rgba(21, 114, 255, 0.16)),
+        rgba(255,255,255,0.08);
+      color: #ffffff;
+      padding: 20px 22px;
       cursor: pointer;
       text-align: left;
-      font-size: 18px;
-      font-weight: 850;
-      transition: 0.25s;
+      font-size: 21px;
+      font-weight: 900;
       display: flex;
       align-items: center;
-      gap: 12px;
+      justify-content: space-between;
+      gap: 14px;
       font-family: inherit;
     }
 
-    .r-btn:hover,
-    .r-btn.active {
-      transform: translateX(6px);
-      background: linear-gradient(90deg, rgba(255, 168, 38, 0.35), rgba(21, 114, 255, 0.22));
-      border-color: rgba(255, 210, 107, 0.8);
-      box-shadow: 0 0 24px rgba(255, 170, 35, 0.2);
+    .accordion-left {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
     }
 
-    .r-code {
-      padding: 7px 12px;
-      border-radius: 13px;
+    .accordion-code {
+      padding: 8px 13px;
+      border-radius: 14px;
       background: #051433;
       color: #ffd66b;
       font-weight: 950;
     }
 
-    .r-display {
+    .accordion-arrow {
+      font-size: 24px;
+      color: #ffd873;
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+
+    .accordion-item.open .accordion-arrow {
+      transform: rotate(180deg);
+    }
+
+    .accordion-panel {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.3s ease;
       background: #ffffff;
       color: #0b1b38;
-      border-radius: 30px;
-      padding: 30px;
-      min-height: 420px;
-      box-shadow: 0 22px 48px rgba(0,0,0,0.25);
-      position: relative;
+    }
+
+    .accordion-item.open .accordion-panel {
+      grid-template-rows: 1fr;
+    }
+
+    .accordion-content {
       overflow: hidden;
-      transition: 0.25s ease;
     }
 
-    .r-display::after {
-      content: "";
-      position: absolute;
-      right: -70px;
-      top: -80px;
-      width: 220px;
-      height: 220px;
-      background: radial-gradient(circle, rgba(255, 165, 0, 0.35), transparent 68%);
-      pointer-events: none;
+    .accordion-inner {
+      padding: 24px;
     }
 
-    .r-display h3 {
-      position: relative;
-      z-index: 1;
-      font-size: 50px;
+    .accordion-inner h3 {
+      font-size: 34px;
       color: #0a2f70;
       font-weight: 950;
+      margin-bottom: 8px;
     }
 
-    .r-display h4 {
-      position: relative;
-      z-index: 1;
-      margin-top: 10px;
-      font-size: 30px;
-      color: #e67400;
-      font-weight: 950;
-    }
-
-    .r-display .desc {
-      position: relative;
-      z-index: 1;
-      margin-top: 18px;
-      font-size: 19px;
-      line-height: 1.78;
-      font-weight: 700;
+    .accordion-inner .desc {
+      font-size: 20px;
+      line-height: 1.8;
       color: #273852;
+      font-weight: 700;
+      margin-bottom: 18px;
     }
 
     .info-box {
       position: relative;
       z-index: 1;
-      margin-top: 18px;
+      margin-top: 14px;
       padding: 18px;
       border-radius: 20px;
       background: #eef6ff;
@@ -821,7 +798,6 @@
 
     @media (max-width: 980px) {
       .hero,
-      .r-layout,
       .course-grid {
         grid-template-columns: 1fr;
       }
@@ -890,35 +866,35 @@
         border-radius: 26px;
       }
 
-      .mission-card {
+      .growth-card {
         min-height: auto;
         padding: 18px;
         border-radius: 24px;
       }
 
-      .mission-top {
+      .growth-top {
         flex-direction: column;
         gap: 12px;
       }
 
-      .mission-title {
+      .growth-title {
         font-size: 17px;
       }
 
-      .mission-score {
+      .growth-score {
         text-align: left;
       }
 
-      .mission-score b {
+      .growth-score b {
         font-size: 34px;
       }
 
-      .mission-score span {
+      .growth-score span {
         font-size: 16px;
       }
 
       .growth-area {
-        height: 190px;
+        height: 220px;
         margin-top: 20px;
       }
 
@@ -926,18 +902,18 @@
         width: 56%;
         gap: 9px;
         left: 7%;
-        height: 135px;
+        height: 150px;
       }
 
-      .growth-bar:nth-child(1) { height: 50px; }
-      .growth-bar:nth-child(2) { height: 73px; }
-      .growth-bar:nth-child(3) { height: 100px; }
-      .growth-bar:nth-child(4) { height: 126px; }
+      .growth-bar:nth-child(1) { height: 56px; }
+      .growth-bar:nth-child(2) { height: 82px; }
+      .growth-bar:nth-child(3) { height: 112px; }
+      .growth-bar:nth-child(4) { height: 142px; }
 
       .growth-arrow {
         left: 42px;
         right: 38px;
-        top: 104px;
+        top: 118px;
         height: 11px;
       }
 
@@ -950,24 +926,16 @@
         border-right-width: 10px;
       }
 
-      .mission-flow {
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-        margin-top: 18px;
+      .growth-caption-box {
+        padding: 18px;
       }
 
-      .mission-step {
-        padding: 16px 8px;
-        border-radius: 18px;
-      }
-
-      .mission-step b {
+      .growth-caption-box strong {
         font-size: 25px;
       }
 
-      .mission-step span {
-        font-size: 17px;
-        line-height: 1.35;
+      .growth-caption-box span {
+        font-size: 19px;
       }
 
       .panel-caption h3 {
@@ -1015,35 +983,28 @@
         font-size: 20px;
       }
 
-      .r-buttons {
-        gap: 12px;
-      }
-
-      .r-btn {
-        font-size: 20px;
+      .accordion-button {
         padding: 18px;
-        border-radius: 20px;
+        font-size: 21px;
       }
 
-      .r-code {
+      .accordion-left {
+        align-items: flex-start;
+      }
+
+      .accordion-code {
         font-size: 20px;
       }
 
-      .r-display,
-      .course-card {
+      .accordion-inner {
         padding: 20px;
-        border-radius: 24px;
       }
 
-      .r-display h3 {
-        font-size: 44px;
+      .accordion-inner h3 {
+        font-size: 32px;
       }
 
-      .r-display h4 {
-        font-size: 30px;
-      }
-
-      .r-display .desc {
+      .accordion-inner .desc {
         font-size: 20px;
         line-height: 1.8;
       }
@@ -1056,6 +1017,11 @@
 
       .info-box b {
         font-size: 22px;
+      }
+
+      .course-card {
+        padding: 20px;
+        border-radius: 24px;
       }
 
       .course-card h3 {
@@ -1154,11 +1120,11 @@
       </div>
 
       <div class="hero-panel fade-in">
-        <div class="mission-card">
-          <div class="mission-top">
-            <div class="mission-title">主任增員能力地圖</div>
-            <div class="mission-score">
-              <b>R1-R4</b>
+        <div class="growth-card">
+          <div class="growth-top">
+            <div class="growth-title">主任增員成長儀表板</div>
+            <div class="growth-score">
+              <b>UP</b>
               <span>從起步到推進</span>
             </div>
           </div>
@@ -1178,11 +1144,9 @@
             </div>
           </div>
 
-          <div class="mission-flow">
-            <div class="mission-step"><b>R1</b><span>取得名單</span></div>
-            <div class="mission-step"><b>R2</b><span>接觸</span></div>
-            <div class="mission-step"><b>R3</b><span>發掘需求</span></div>
-            <div class="mission-step"><b>R4</b><span>說明壽險事業</span></div>
+          <div class="growth-caption-box">
+            <strong>讓增員節奏，真正跑起來</strong>
+            <span>從名單建立、接觸互動、需求發掘到事業說明，逐步養成主任的增員推進力。</span>
           </div>
         </div>
 
@@ -1235,48 +1199,152 @@
         主任班你可以學到什麼
       </div>
 
-      <div class="r-layout">
-        <div class="r-buttons">
-          <button class="r-btn active" onclick="showR(0, this)">
-            <span class="r-code">R1</span> 取得名單
+      <div class="accordion">
+
+        <div class="accordion-item">
+          <button class="accordion-button" onclick="toggleAccordion(this)">
+            <span class="accordion-left">
+              <span class="accordion-code">R1</span>
+              <span>取得名單</span>
+            </span>
+            <span class="accordion-arrow">⌄</span>
           </button>
 
-          <button class="r-btn" onclick="showR(1, this)">
-            <span class="r-code">R2</span> 接觸
-          </button>
+          <div class="accordion-panel">
+            <div class="accordion-content">
+              <div class="accordion-inner">
+                <h3>取得名單</h3>
+                <p class="desc">
+                  拓展人脈，建立增員來源，讓主任能從緣故、推薦與日常接觸中，整理可持續經營的準增名單。
+                </p>
 
-          <button class="r-btn" onclick="showR(2, this)">
-            <span class="r-code">R3</span> 發掘需求
-          </button>
+                <div class="info-box">
+                  <b>常見卡點</b>
+                  不知道名單從哪裡來、名單量不足、只想到熟人，沒有持續開發來源。
+                </div>
 
-          <button class="r-btn" onclick="showR(3, this)">
-            <span class="r-code">R4</span> 說明壽險事業
-          </button>
-        </div>
+                <div class="info-box">
+                  <b>課程補強</b>
+                  緣故名單盤點、推薦人名單建立、準增來源整理。
+                </div>
 
-        <div class="r-display">
-          <h3 id="rCode">R1</h3>
-          <h4 id="rTitle">取得名單</h4>
-
-          <p class="desc" id="rDesc">
-            拓展人脈，建立增員來源，讓主任能從緣故、推薦與日常接觸中，整理可持續經營的準增名單。
-          </p>
-
-          <div class="info-box">
-            <b>常見卡點</b>
-            <span id="rPain">不知道名單從哪裡來、名單量不足、只想到熟人，沒有持續開發來源。</span>
-          </div>
-
-          <div class="info-box">
-            <b>課程補強</b>
-            <span id="rCourse">緣故名單盤點、推薦人名單建立、準增來源整理。</span>
-          </div>
-
-          <div class="info-box">
-            <b>一句推進提醒</b>
-            <span id="rTip">名單不是等出來的，是整理出來、問出來、累積出來的。</span>
+                <div class="info-box">
+                  <b>一句推進提醒</b>
+                  名單不是等出來的，是整理出來、問出來、累積出來的。
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+
+        <div class="accordion-item">
+          <button class="accordion-button" onclick="toggleAccordion(this)">
+            <span class="accordion-left">
+              <span class="accordion-code">R2</span>
+              <span>接觸</span>
+            </span>
+            <span class="accordion-arrow">⌄</span>
+          </button>
+
+          <div class="accordion-panel">
+            <div class="accordion-content">
+              <div class="accordion-inner">
+                <h3>接觸</h3>
+                <p class="desc">
+                  培養關係，讓準增願意開始了解。這一階段不是立刻談工作，而是透過自然話題、工具或活動，創造後續互動機會。
+                </p>
+
+                <div class="info-box">
+                  <b>常見卡點</b>
+                  怕開口太突兀、擔心對方反感，或接觸後不知道怎麼延續。
+                </div>
+
+                <div class="info-box">
+                  <b>課程補強</b>
+                  定聯分級、行為模式測驗應用、自然接觸話術、活動邀約。
+                </div>
+
+                <div class="info-box">
+                  <b>一句推進提醒</b>
+                  好的接觸，不是急著說服，而是先讓對方願意聊下去。
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-button" onclick="toggleAccordion(this)">
+            <span class="accordion-left">
+              <span class="accordion-code">R3</span>
+              <span>發掘需求</span>
+            </span>
+            <span class="accordion-arrow">⌄</span>
+          </button>
+
+          <div class="accordion-panel">
+            <div class="accordion-content">
+              <div class="accordion-inner">
+                <h3>發掘需求</h3>
+                <p class="desc">
+                  判斷問題與推力，找出準增真正重視的工作條件，包含收入、成長、時間、價值、產業與晉升期待。
+                </p>
+
+                <div class="info-box">
+                  <b>常見卡點</b>
+                  聊很多卻沒問到重點，知道對方現況卻挖不出轉換動機。
+                </div>
+
+                <div class="info-box">
+                  <b>課程補強</b>
+                  六大面向提問、需求引導、工作價值釐清、準增動機判斷。
+                </div>
+
+                <div class="info-box">
+                  <b>一句推進提醒</b>
+                  準增不是被說服的，而是被問到自己也開始思考。
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-button" onclick="toggleAccordion(this)">
+            <span class="accordion-left">
+              <span class="accordion-code">R4</span>
+              <span>說明壽險事業</span>
+            </span>
+            <span class="accordion-arrow">⌄</span>
+          </button>
+
+          <div class="accordion-panel">
+            <div class="accordion-content">
+              <div class="accordion-inner">
+                <h3>說明壽險事業</h3>
+                <p class="desc">
+                  解決問題，說明壽險事業如何對應準增需求，讓對方看見這份工作和自身期待之間的連結。
+                </p>
+
+                <div class="info-box">
+                  <b>常見卡點</b>
+                  說明太像制式介紹，講很多公司優勢，卻沒有對應對方真正需求。
+                </div>
+
+                <div class="info-box">
+                  <b>課程補強</b>
+                  FAB 邏輯、壽險事業說明、異議問題處理、下一步推進設計。
+                </div>
+
+                <div class="info-box">
+                  <b>一句推進提醒</b>
+                  好的說明不是把優勢全部講完，而是讓對方看見：這跟我有關。
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -1377,60 +1445,15 @@
   </div>
 
   <script>
-    const rData = [
-      {
-        code: "R1",
-        title: "取得名單",
-        desc: "拓展人脈，建立增員來源，讓主任能從緣故、推薦與日常接觸中，整理可持續經營的準增名單。",
-        pain: "不知道名單從哪裡來、名單量不足、只想到熟人，沒有持續開發來源。",
-        course: "緣故名單盤點、推薦人名單建立、準增來源整理。",
-        tip: "名單不是等出來的，是整理出來、問出來、累積出來的。"
-      },
-      {
-        code: "R2",
-        title: "接觸",
-        desc: "培養關係，讓準增願意開始了解。這一階段不是立刻談工作，而是透過自然話題、工具或活動，創造後續互動機會。",
-        pain: "怕開口太突兀、擔心對方反感，或接觸後不知道怎麼延續。",
-        course: "定聯分級、行為模式測驗應用、自然接觸話術、活動邀約。",
-        tip: "好的接觸，不是急著說服，而是先讓對方願意聊下去。"
-      },
-      {
-        code: "R3",
-        title: "發掘需求",
-        desc: "判斷問題與推力，找出準增真正重視的工作條件，包含收入、成長、時間、價值、產業與晉升期待。",
-        pain: "聊很多卻沒問到重點，知道對方現況卻挖不出轉換動機。",
-        course: "六大面向提問、需求引導、工作價值釐清、準增動機判斷。",
-        tip: "準增不是被說服的，而是被問到自己也開始思考。"
-      },
-      {
-        code: "R4",
-        title: "說明壽險事業",
-        desc: "解決問題，說明壽險事業如何對應準增需求，讓對方看見這份工作和自身期待之間的連結。",
-        pain: "說明太像制式介紹，講很多公司優勢，卻沒有對應對方真正需求。",
-        course: "FAB 邏輯、壽險事業說明、異議問題處理、下一步推進設計。",
-        tip: "好的說明不是把優勢全部講完，而是讓對方看見：這跟我有關。"
+    function toggleAccordion(button) {
+      const item = button.closest(".accordion-item");
+      const isOpen = item.classList.contains("open");
+
+      if (isOpen) {
+        item.classList.remove("open");
+      } else {
+        item.classList.add("open");
       }
-    ];
-
-    function showR(index, button) {
-      const item = rData[index];
-
-      document.getElementById("rCode").textContent = item.code;
-      document.getElementById("rTitle").textContent = item.title;
-      document.getElementById("rDesc").textContent = item.desc;
-      document.getElementById("rPain").textContent = item.pain;
-      document.getElementById("rCourse").textContent = item.course;
-      document.getElementById("rTip").textContent = item.tip;
-
-      const buttons = document.querySelectorAll(".r-btn");
-      buttons.forEach(btn => btn.classList.remove("active"));
-      button.classList.add("active");
-
-      const display = document.querySelector(".r-display");
-      display.style.transform = "scale(0.985)";
-      setTimeout(() => {
-        display.style.transform = "scale(1)";
-      }, 120);
     }
   </script>
 </body>
