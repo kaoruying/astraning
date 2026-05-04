@@ -59,7 +59,7 @@
 
     .hero {
       display: grid;
-      grid-template-columns: 1.02fr 0.98fr;
+      grid-template-columns: 1.08fr 0.92fr;
       gap: 34px;
       align-items: center;
       min-height: 640px;
@@ -81,13 +81,17 @@
     }
 
     @keyframes pulseGlow {
-      0%, 100% { box-shadow: 0 0 18px rgba(255, 171, 35, 0.18); }
-      50% { box-shadow: 0 0 34px rgba(255, 171, 35, 0.45); }
+      0%, 100% {
+        box-shadow: 0 0 18px rgba(255, 171, 35, 0.18);
+      }
+      50% {
+        box-shadow: 0 0 34px rgba(255, 171, 35, 0.45);
+      }
     }
 
     h1 {
       margin-top: 24px;
-      font-size: clamp(46px, 6.1vw, 82px);
+      font-size: clamp(44px, 6.5vw, 78px);
       line-height: 1.08;
       font-weight: 950;
       letter-spacing: -2px;
@@ -132,322 +136,111 @@
       line-height: 1.5;
     }
 
-    .hero-visual {
+    .visual-card {
       position: relative;
       border-radius: 34px;
-      padding: 26px;
+      padding: 28px;
       border: 1px solid rgba(161, 207, 255, 0.35);
       background: rgba(255,255,255,0.09);
       backdrop-filter: blur(14px);
       box-shadow: 0 30px 80px rgba(0,0,0,0.35);
       overflow: hidden;
-      min-height: 560px;
     }
 
-    .hero-visual::before {
+    .visual-card::before {
       content: "";
       position: absolute;
-      width: 380px;
-      height: 380px;
-      right: -120px;
-      top: -110px;
-      background: radial-gradient(circle, rgba(255, 157, 29, 0.44), transparent 68%);
+      width: 300px;
+      height: 300px;
+      right: -90px;
+      top: -80px;
+      background: radial-gradient(circle, rgba(255, 157, 29, 0.5), transparent 68%);
       pointer-events: none;
     }
 
-    .dashboard {
+    .rocket {
       position: relative;
-      z-index: 1;
-      min-height: 508px;
+      height: 360px;
       border-radius: 28px;
-      padding: 26px;
       background:
-        radial-gradient(circle at 72% 23%, rgba(255, 193, 7, 0.24), transparent 23%),
-        radial-gradient(circle at 18% 82%, rgba(35, 182, 255, 0.25), transparent 22%),
-        linear-gradient(160deg, rgba(10, 45, 100, 0.96), rgba(2, 12, 31, 0.94));
+        radial-gradient(circle at 72% 28%, rgba(255, 193, 7, 0.55), transparent 18%),
+        linear-gradient(160deg, rgba(10, 45, 100, 0.95), rgba(2, 12, 31, 0.9));
       border: 1px solid rgba(255,255,255,0.15);
       overflow: hidden;
-      box-shadow: inset 0 0 45px rgba(0,0,0,0.28);
     }
 
-    .dashboard::before {
-      content: "";
+    .rocket-icon {
       position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
-      background-size: 34px 34px;
-      opacity: 0.55;
+      right: 118px;
+      top: 74px;
+      font-size: 90px;
+      transform: rotate(22deg);
+      filter: drop-shadow(0 0 22px rgba(255, 185, 49, 0.75));
+      animation: floatRocket 2.8s ease-in-out infinite;
+      z-index: 4;
     }
 
-    .dash-top {
-      position: relative;
+    .arrow {
+      position: absolute;
+      left: 48px;
+      bottom: 82px;
+      width: 58%;
+      height: 58px;
+      border-top: 14px solid #ffb12b;
+      border-right: 14px solid #ffb12b;
+      transform: skewX(-20deg) rotate(-18deg);
+      border-radius: 8px;
+      box-shadow: 0 0 28px rgba(255, 166, 31, 0.55);
       z-index: 2;
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      align-items: flex-start;
-      margin-bottom: 26px;
     }
 
-    .dash-title {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.16);
-      color: #ffd873;
-      font-weight: 900;
-      font-size: 15px;
-    }
-
-    .dash-score {
-      text-align: right;
-    }
-
-    .dash-score b {
-      display: block;
-      font-size: 36px;
-      color: #ffd873;
-      line-height: 1;
-    }
-
-    .dash-score span {
-      display: block;
-      margin-top: 6px;
-      font-size: 13px;
-      color: rgba(236, 246, 255, 0.78);
-      font-weight: 700;
-    }
-
-    .visual-stage {
-      position: relative;
-      z-index: 2;
-      height: 235px;
-      margin-top: 10px;
-      border-radius: 24px;
-      background: rgba(255,255,255,0.045);
-      border: 1px solid rgba(255,255,255,0.11);
-      overflow: hidden;
-    }
-
-    .orb {
+    .bars {
       position: absolute;
-      border-radius: 50%;
-      filter: blur(2px);
-      animation: drift 5s ease-in-out infinite;
-      opacity: 0.65;
-    }
-
-    .orb.one {
-      width: 18px;
-      height: 18px;
-      left: 12%;
-      top: 20%;
-      background: rgba(255, 213, 106, 0.8);
-    }
-
-    .orb.two {
-      width: 12px;
-      height: 12px;
-      right: 16%;
-      top: 28%;
-      animation-delay: 0.8s;
-      background: rgba(70, 202, 255, 0.9);
-    }
-
-    .orb.three {
-      width: 14px;
-      height: 14px;
-      right: 34%;
-      bottom: 18%;
-      animation-delay: 1.4s;
-      background: rgba(255, 154, 37, 0.9);
-    }
-
-    @keyframes drift {
-      0%, 100% { transform: translateY(0) translateX(0); }
-      50% { transform: translateY(-18px) translateX(10px); }
-    }
-
-    .chart-wrap {
-      position: absolute;
-      left: 8%;
-      bottom: 22px;
-      width: 48%;
-      height: 160px;
+      left: 34px;
+      bottom: 34px;
       display: flex;
-      align-items: flex-end;
-      gap: 15px;
+      align-items: end;
+      gap: 12px;
       z-index: 3;
     }
 
-    .chart-bar {
-      flex: 1;
-      max-width: 50px;
-      border-radius: 16px 16px 8px 8px;
-      background: linear-gradient(180deg, #55d6ff 0%, #178ce8 58%, #0b61c6 100%);
-      box-shadow: 0 0 22px rgba(74, 202, 255, 0.45);
+    .bar {
+      width: 32px;
+      border-radius: 10px 10px 0 0;
+      background: linear-gradient(#43c7ff, #0b65cf);
+      box-shadow: 0 0 18px rgba(54, 186, 255, 0.55);
       transform-origin: bottom;
+      animation: growBar 1.2s ease forwards, barGlow 2.5s ease-in-out infinite;
       transform: scaleY(0);
     }
 
-    .show .chart-bar {
-      animation: growBar 1.15s ease forwards, barGlow 2.4s ease-in-out infinite;
-    }
-
-    .chart-bar:nth-child(1) { height: 64px; animation-delay: 0.1s; }
-    .chart-bar:nth-child(2) { height: 95px; animation-delay: 0.25s; }
-    .chart-bar:nth-child(3) { height: 124px; animation-delay: 0.4s; }
-    .chart-bar:nth-child(4) { height: 155px; animation-delay: 0.55s; }
+    .bar:nth-child(1) { height: 58px; animation-delay: 0.15s; }
+    .bar:nth-child(2) { height: 92px; animation-delay: 0.3s; }
+    .bar:nth-child(3) { height: 130px; animation-delay: 0.45s; }
+    .bar:nth-child(4) { height: 172px; animation-delay: 0.6s; }
 
     @keyframes growBar {
-      to { transform: scaleY(1); }
+      to {
+        transform: scaleY(1);
+      }
     }
 
     @keyframes barGlow {
-      0%, 100% { box-shadow: 0 0 18px rgba(74, 202, 255, 0.38); }
-      50% { box-shadow: 0 0 34px rgba(74, 202, 255, 0.7); }
-    }
-
-    .growth-line {
-      position: absolute;
-      z-index: 4;
-      left: 12%;
-      right: 10%;
-      top: 111px;
-      height: 13px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #ffd86a, #ffad2f, #ff7b00);
-      box-shadow: 0 0 30px rgba(255, 168, 38, 0.55);
-      transform: rotate(-16deg) translateX(-50px);
-      transform-origin: left center;
-      opacity: 0;
-    }
-
-    .show .growth-line {
-      animation: lineSlide 1.2s ease forwards;
-    }
-
-    .growth-line::after {
-      content: "";
-      position: absolute;
-      right: -15px;
-      top: -16px;
-      width: 42px;
-      height: 42px;
-      border-top: 13px solid #ff9d16;
-      border-right: 13px solid #ff9d16;
-      border-radius: 6px;
-      transform: rotate(25deg);
-    }
-
-    @keyframes lineSlide {
-      to {
-        opacity: 1;
-        transform: rotate(-16deg) translateX(0);
+      0%, 100% {
+        box-shadow: 0 0 18px rgba(54, 186, 255, 0.42);
+      }
+      50% {
+        box-shadow: 0 0 34px rgba(54, 186, 255, 0.72);
       }
     }
 
-    .metric-row {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .metric-card {
-      padding: 15px 12px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.09);
-      border: 1px solid rgba(255,255,255,0.13);
-      opacity: 0;
-      transform: translateY(14px);
-    }
-
-    .show .metric-card {
-      animation: chipPop 0.7s ease forwards;
-    }
-
-    .metric-card:nth-child(1) { animation-delay: 0.65s; }
-    .metric-card:nth-child(2) { animation-delay: 0.8s; }
-    .metric-card:nth-child(3) { animation-delay: 0.95s; }
-
-    .metric-card b {
-      display: block;
-      color: #ffd873;
-      font-size: 22px;
-      margin-bottom: 5px;
-    }
-
-    .metric-card span {
-      color: rgba(236, 246, 255, 0.82);
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    .r-flow {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .r-chip {
-      padding: 14px 8px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.11);
-      border: 1px solid rgba(255,255,255,0.18);
-      text-align: center;
-      opacity: 0;
-      transform: translateY(14px);
-      cursor: pointer;
-      transition: 0.22s ease;
-      font-family: inherit;
-      color: #ffffff;
-    }
-
-    .r-chip:hover {
-      transform: translateY(-5px) scale(1.03);
-      background: rgba(255, 168, 38, 0.24);
-      border-color: rgba(255, 216, 115, 0.7);
-      box-shadow: 0 0 22px rgba(255, 168, 38, 0.24);
-    }
-
-    .show .r-chip {
-      animation: chipPop 0.7s ease forwards;
-    }
-
-    .r-chip:nth-child(1) { animation-delay: 1.05s; }
-    .r-chip:nth-child(2) { animation-delay: 1.18s; }
-    .r-chip:nth-child(3) { animation-delay: 1.31s; }
-    .r-chip:nth-child(4) { animation-delay: 1.44s; }
-
-    @keyframes chipPop {
-      to {
-        opacity: 1;
-        transform: translateY(0);
+    @keyframes floatRocket {
+      0%, 100% {
+        transform: translateY(0) rotate(22deg);
       }
-    }
-
-    .r-chip b {
-      display: block;
-      color: #ffd873;
-      font-size: 22px;
-      margin-bottom: 5px;
-    }
-
-    .r-chip span {
-      color: rgba(236, 246, 255, 0.88);
-      font-size: 13px;
-      font-weight: 800;
+      50% {
+        transform: translateY(-12px) rotate(22deg);
+      }
     }
 
     .mini-title {
@@ -473,15 +266,6 @@
       border: 1px solid rgba(255,255,255,0.16);
       backdrop-filter: blur(14px);
       box-shadow: 0 24px 60px rgba(0,0,0,0.22);
-    }
-
-    .section.show {
-      animation: sectionGlow 0.9s ease both;
-    }
-
-    @keyframes sectionGlow {
-      0% { box-shadow: 0 12px 28px rgba(0,0,0,0.15); }
-      100% { box-shadow: 0 24px 60px rgba(0,0,0,0.22); }
     }
 
     .section-title {
@@ -538,72 +322,6 @@
     .pain-card p {
       font-weight: 850;
       line-height: 1.55;
-    }
-
-    .course-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-    }
-
-    .course-card {
-      background: #ffffff;
-      color: #0d1c3a;
-      border-radius: 28px;
-      padding: 28px;
-      border: 3px solid rgba(255, 166, 31, 0.22);
-      box-shadow: 0 24px 50px rgba(0,0,0,0.28);
-      transition: 0.25s ease;
-    }
-
-    .course-card:hover {
-      transform: translateY(-7px);
-    }
-
-    .course-card h3 {
-      font-size: 32px;
-      font-weight: 950;
-      color: #0a2f70;
-      line-height: 1.3;
-    }
-
-    .course-card .focus {
-      margin-top: 8px;
-      font-weight: 900;
-      color: #e67400;
-      line-height: 1.55;
-    }
-
-    .course-card ul {
-      margin-top: 20px;
-      list-style: none;
-      display: grid;
-      gap: 12px;
-    }
-
-    .course-card li {
-      display: flex;
-      gap: 10px;
-      line-height: 1.55;
-      font-weight: 750;
-      padding: 12px 14px;
-      border-radius: 16px;
-      background: #eef6ff;
-    }
-
-    .course-card li::before {
-      content: "✓";
-      width: 23px;
-      height: 23px;
-      border-radius: 50%;
-      background: #ff8a00;
-      color: #ffffff;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 950;
-      flex-shrink: 0;
-      margin-top: 1px;
     }
 
     .r-layout {
@@ -720,6 +438,72 @@
       font-size: 18px;
     }
 
+    .course-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .course-card {
+      background: #ffffff;
+      color: #0d1c3a;
+      border-radius: 28px;
+      padding: 28px;
+      border: 3px solid rgba(255, 166, 31, 0.22);
+      box-shadow: 0 24px 50px rgba(0,0,0,0.28);
+      transition: 0.25s ease;
+    }
+
+    .course-card:hover {
+      transform: translateY(-7px);
+    }
+
+    .course-card h3 {
+      font-size: 32px;
+      font-weight: 950;
+      color: #0a2f70;
+      line-height: 1.3;
+    }
+
+    .course-card .focus {
+      margin-top: 8px;
+      font-weight: 900;
+      color: #e67400;
+      line-height: 1.55;
+    }
+
+    .course-card ul {
+      margin-top: 20px;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .course-card li {
+      display: flex;
+      gap: 10px;
+      line-height: 1.55;
+      font-weight: 750;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: #eef6ff;
+    }
+
+    .course-card li::before {
+      content: "✓";
+      width: 23px;
+      height: 23px;
+      border-radius: 50%;
+      background: #ff8a00;
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 950;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
     .outcome-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -772,8 +556,12 @@
     }
 
     @keyframes pulseBox {
-      0%, 100% { box-shadow: 0 30px 80px rgba(0,0,0,0.36); }
-      50% { box-shadow: 0 30px 90px rgba(255, 145, 0, 0.22); }
+      0%, 100% {
+        box-shadow: 0 30px 80px rgba(0,0,0,0.36);
+      }
+      50% {
+        box-shadow: 0 30px 90px rgba(255, 145, 0, 0.22);
+      }
     }
 
     .cta h2 {
@@ -821,120 +609,6 @@
       text-align: center;
     }
 
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 99;
-      background: rgba(0, 8, 25, 0.72);
-      backdrop-filter: blur(10px);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .modal-overlay.active {
-      display: flex;
-    }
-
-    .modal-card {
-      width: min(680px, 100%);
-      border-radius: 32px;
-      background:
-        radial-gradient(circle at 90% 10%, rgba(255, 168, 38, 0.22), transparent 28%),
-        linear-gradient(135deg, #ffffff, #eef6ff);
-      color: #0b1b38;
-      box-shadow: 0 30px 90px rgba(0,0,0,0.45);
-      border: 1px solid rgba(255, 216, 115, 0.9);
-      overflow: hidden;
-      transform: scale(0.92) translateY(18px);
-      opacity: 0;
-      animation: modalIn 0.25s ease forwards;
-    }
-
-    @keyframes modalIn {
-      to {
-        transform: scale(1) translateY(0);
-        opacity: 1;
-      }
-    }
-
-    .modal-header {
-      padding: 28px 30px;
-      background:
-        linear-gradient(135deg, #07306d, #0b1b38);
-      color: #ffffff;
-      position: relative;
-    }
-
-    .modal-header b {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 58px;
-      height: 58px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, #ffd66b, #ff8a00);
-      color: #06142f;
-      font-size: 28px;
-      font-weight: 950;
-      box-shadow: 0 0 24px rgba(255, 168, 38, 0.45);
-      margin-bottom: 16px;
-    }
-
-    .modal-header h3 {
-      font-size: 34px;
-      font-weight: 950;
-      line-height: 1.25;
-    }
-
-    .modal-header p {
-      margin-top: 8px;
-      color: rgba(236, 246, 255, 0.88);
-      font-weight: 700;
-      line-height: 1.7;
-    }
-
-    .close-modal {
-      position: absolute;
-      right: 18px;
-      top: 18px;
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.38);
-      background: rgba(255,255,255,0.12);
-      color: #ffffff;
-      font-size: 22px;
-      cursor: pointer;
-    }
-
-    .modal-body {
-      padding: 26px 30px 30px;
-      display: grid;
-      gap: 16px;
-    }
-
-    .modal-info {
-      padding: 18px;
-      border-radius: 20px;
-      background: #f3f8ff;
-      border-left: 7px solid #ff9d16;
-      line-height: 1.7;
-    }
-
-    .modal-info strong {
-      display: block;
-      color: #0a2f70;
-      font-size: 18px;
-      margin-bottom: 6px;
-    }
-
-    .modal-info span {
-      color: #243955;
-      font-weight: 700;
-    }
-
     @media (max-width: 980px) {
       .hero,
       .r-layout,
@@ -952,10 +626,6 @@
 
       .outcome-grid {
         grid-template-columns: repeat(2, 1fr);
-      }
-
-      .hero-visual {
-        min-height: auto;
       }
     }
 
@@ -996,70 +666,45 @@
         grid-template-columns: 1fr;
       }
 
-      .visual-card,
-      .hero-visual {
+      .visual-card {
         padding: 18px;
         border-radius: 28px;
       }
 
-      .dashboard {
-        min-height: 390px;
-        padding: 20px;
+      .rocket {
+        height: 260px;
       }
 
-      .dash-top {
-        flex-direction: column;
+      .rocket-icon {
+        font-size: 72px;
+        right: 86px;
+        top: 48px;
       }
 
-      .dash-score {
-        text-align: left;
-      }
-
-      .visual-stage {
-        height: 210px;
-      }
-
-      .chart-wrap {
-        left: 8%;
-        bottom: 20px;
-        width: 52%;
-        height: 145px;
-        gap: 10px;
-      }
-
-      .chart-bar {
-        min-width: 24px;
-        max-width: 42px;
-      }
-
-      .chart-bar:nth-child(1) { height: 52px; }
-      .chart-bar:nth-child(2) { height: 78px; }
-      .chart-bar:nth-child(3) { height: 106px; }
-      .chart-bar:nth-child(4) { height: 135px; }
-
-      .growth-line {
-        left: 48px;
-        right: 44px;
-        top: 112px;
-        height: 11px;
-      }
-
-      .growth-line::after {
-        width: 34px;
-        height: 34px;
-        right: -13px;
-        top: -14px;
+      .arrow {
+        left: 34px;
+        bottom: 62px;
+        width: 58%;
+        height: 46px;
         border-top-width: 10px;
         border-right-width: 10px;
       }
 
-      .metric-row {
-        grid-template-columns: 1fr;
+      .bars {
+        left: 26px;
+        bottom: 26px;
+        gap: 10px;
       }
 
-      .r-flow {
-        grid-template-columns: repeat(2, 1fr);
+      .bar {
+        width: 28px;
+        border-radius: 8px 8px 0 0;
       }
+
+      .bar:nth-child(1) { height: 52px; }
+      .bar:nth-child(2) { height: 78px; }
+      .bar:nth-child(3) { height: 108px; }
+      .bar:nth-child(4) { height: 142px; }
 
       .course-card,
       .r-display {
@@ -1085,18 +730,6 @@
 
       .retrain-note p {
         font-size: 18px;
-      }
-
-      .modal-header {
-        padding: 24px 22px;
-      }
-
-      .modal-header h3 {
-        font-size: 28px;
-      }
-
-      .modal-body {
-        padding: 22px;
       }
     }
   </style>
@@ -1130,50 +763,15 @@
         </div>
       </div>
 
-      <div class="hero-visual reveal">
-        <div class="dashboard">
-          <div class="dash-top">
-            <div class="dash-title">R 線增員推進儀表板</div>
-            <div class="dash-score">
-              <b>R1-R4</b>
-              <span>從起步到推進</span>
-            </div>
-          </div>
-
-          <div class="visual-stage">
-            <div class="orb one"></div>
-            <div class="orb two"></div>
-            <div class="orb three"></div>
-
-            <div class="growth-line"></div>
-
-            <div class="chart-wrap">
-              <div class="chart-bar"></div>
-              <div class="chart-bar"></div>
-              <div class="chart-bar"></div>
-              <div class="chart-bar"></div>
-            </div>
-          </div>
-
-          <div class="metric-row">
-            <div class="metric-card"><b>名單</b><span>來源建立</span></div>
-            <div class="metric-card"><b>需求</b><span>精準發掘</span></div>
-            <div class="metric-card"><b>邀約</b><span>推進下一步</span></div>
-          </div>
-
-          <div class="r-flow">
-            <button class="r-chip" onclick="openRModal(0)">
-              <b>R1</b><span>取得名單</span>
-            </button>
-            <button class="r-chip" onclick="openRModal(1)">
-              <b>R2</b><span>啟動接觸</span>
-            </button>
-            <button class="r-chip" onclick="openRModal(2)">
-              <b>R3</b><span>發掘需求</span>
-            </button>
-            <button class="r-chip" onclick="openRModal(3)">
-              <b>R4</b><span>邀約推進</span>
-            </button>
+      <div class="visual-card reveal">
+        <div class="rocket">
+          <div class="rocket-icon">🚀</div>
+          <div class="arrow"></div>
+          <div class="bars">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
           </div>
         </div>
 
@@ -1221,43 +819,7 @@
     <section class="section reveal">
       <div class="section-title">
         <span class="number">2</span>
-        你可以學到什麼？
-      </div>
-
-      <div class="course-grid">
-        <div class="course-card">
-          <h3>主任經典基礎班</h3>
-          <div class="focus">聚焦增員起步與基本功建立｜打穩 R1～R2 基礎能力</div>
-
-          <ul>
-            <li>看懂 R 線全貌</li>
-            <li>建立緣故名單與推薦人名單</li>
-            <li>掌握增員定聯分級</li>
-            <li>學會運用行為模式測驗開啟接觸</li>
-            <li>學會邀約準增參加活動</li>
-            <li>補強退休、稅務、保障等高效行銷切入點</li>
-          </ul>
-        </div>
-
-        <div class="course-card">
-          <h3>主任進階班</h3>
-          <div class="focus">聚焦需求挖掘與推進能力｜強化 R2～R4 關鍵做法</div>
-
-          <ul>
-            <li>學會網路增員與陌生開發</li>
-            <li>學會發掘準增需求與六大面向提問</li>
-            <li>學會 FAB 邀約法與邀約下一步</li>
-            <li>學會異議問題處理</li>
-            <li>建立活動量管理與穩定增員節奏</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section reveal">
-      <div class="section-title">
-        <span class="number">3</span>
-        R 線互動檢核
+        主任班你可以學到什麼
       </div>
 
       <div class="r-layout">
@@ -1301,6 +863,42 @@
             <b>一句推進提醒</b>
             <span id="rTip">名單不是等出來的，是整理出來、問出來、累積出來的。</span>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-title">
+        <span class="number">3</span>
+        主任班上課內容
+      </div>
+
+      <div class="course-grid">
+        <div class="course-card">
+          <h3>主任經典基礎班</h3>
+          <div class="focus">聚焦增員起步與基本功建立｜打穩 R1～R2 基礎能力</div>
+
+          <ul>
+            <li>看懂 R 線全貌</li>
+            <li>建立緣故名單與推薦人名單</li>
+            <li>掌握增員定聯分級</li>
+            <li>學會運用行為模式測驗開啟接觸</li>
+            <li>學會邀約準增參加活動</li>
+            <li>補強退休、稅務、保障等高效行銷切入點</li>
+          </ul>
+        </div>
+
+        <div class="course-card">
+          <h3>主任進階班</h3>
+          <div class="focus">聚焦需求挖掘與推進能力｜強化 R2～R4 關鍵做法</div>
+
+          <ul>
+            <li>學會網路增員與陌生開發</li>
+            <li>學會發掘準增需求與六大面向提問</li>
+            <li>學會 FAB 邀約法與邀約下一步</li>
+            <li>學會異議問題處理</li>
+            <li>建立活動量管理與穩定增員節奏</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -1365,46 +963,11 @@
 
   </div>
 
-  <div class="modal-overlay" id="rModal" onclick="closeRModal(event)">
-    <div class="modal-card" onclick="event.stopPropagation()">
-      <div class="modal-header">
-        <button class="close-modal" onclick="closeRModal()">×</button>
-        <b id="modalCode">R1</b>
-        <h3 id="modalTitle">取得名單</h3>
-        <p id="modalSubtitle">建立增員的第一個起點。</p>
-      </div>
-
-      <div class="modal-body">
-        <div class="modal-info">
-          <strong>這一段可以學到</strong>
-          <span id="modalLearn">建立緣故名單、推薦人名單，讓增員有來源、有紀錄、有追蹤。</span>
-        </div>
-
-        <div class="modal-info">
-          <strong>常見卡點</strong>
-          <span id="modalPain">不知道名單從哪裡來，或名單寫了卻沒有後續動作。</span>
-        </div>
-
-        <div class="modal-info">
-          <strong>課程補強重點</strong>
-          <span id="modalCourse">緣故名單盤點、推薦人名單建立、增員名單分類。</span>
-        </div>
-
-        <div class="modal-info">
-          <strong>一句推進提醒</strong>
-          <span id="modalTip">名單不是等出來的，是整理出來、問出來、累積出來的。</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <script>
     const rData = [
       {
         code: "R1",
         title: "取得名單",
-        subtitle: "建立增員的第一個起點。",
-        learn: "建立緣故名單、推薦人名單，讓增員不是想到才做，而是有來源、有紀錄、有追蹤。",
         desc: "建立緣故名單、推薦人名單，讓增員不是想到才做，而是有來源、有紀錄、有追蹤。",
         pain: "不知道名單從哪裡來，或名單寫了卻沒有後續動作。",
         course: "緣故名單盤點、推薦人名單建立、增員名單分類。",
@@ -1413,8 +976,6 @@
       {
         code: "R2",
         title: "啟動接觸",
-        subtitle: "讓準增願意開始聊下去。",
-        learn: "透過自然話題、行為模式測驗或活動邀約，開啟與準增的第一步接觸。",
         desc: "透過自然話題、行為模式測驗或活動邀約，開啟與準增的第一步接觸。",
         pain: "怕太像推銷、不知道怎麼開口，或接觸後不知道如何延續。",
         course: "定聯分級、行為模式測驗應用、準增接觸話術。",
@@ -1423,8 +984,6 @@
       {
         code: "R3",
         title: "發掘需求",
-        subtitle: "問出真正的轉換動機。",
-        learn: "從對方的工作、收入、時間、成長期待中，找出真正重視的工作條件。",
         desc: "從對方的工作、收入、時間、成長期待中，找出真正重視的工作條件。",
         pain: "聊很多，但沒有問到關鍵；知道對方現況，卻沒有挖出轉換動機。",
         course: "六大面向提問、需求引導、工作價值釐清。",
@@ -1433,8 +992,6 @@
       {
         code: "R4",
         title: "邀約推進",
-        subtitle: "把對話收斂到下一步。",
-        learn: "根據準增需求，用合適的理由邀約活動、面談或下一步接觸。",
         desc: "根據準增需求，用合適的理由邀約活動、面談或下一步接觸。",
         pain: "邀約常被「我再想想」「沒時間」「先不用」擋住。",
         course: "FAB 邀約法、活動邀約、下一步推進設計。",
@@ -1462,33 +1019,6 @@
         display.style.transform = "scale(1)";
       }, 120);
     }
-
-    function openRModal(index) {
-      const item = rData[index];
-
-      document.getElementById("modalCode").textContent = item.code;
-      document.getElementById("modalTitle").textContent = item.title;
-      document.getElementById("modalSubtitle").textContent = item.subtitle;
-      document.getElementById("modalLearn").textContent = item.learn;
-      document.getElementById("modalPain").textContent = item.pain;
-      document.getElementById("modalCourse").textContent = item.course;
-      document.getElementById("modalTip").textContent = item.tip;
-
-      document.getElementById("rModal").classList.add("active");
-      document.body.style.overflow = "hidden";
-    }
-
-    function closeRModal(event) {
-      if (event && event.target.id !== "rModal") return;
-      document.getElementById("rModal").classList.remove("active");
-      document.body.style.overflow = "";
-    }
-
-    document.addEventListener("keydown", function(event) {
-      if (event.key === "Escape") {
-        closeRModal();
-      }
-    });
 
     const revealElements = document.querySelectorAll(".reveal");
 
