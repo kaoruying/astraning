@@ -63,6 +63,7 @@
 
     .section {
       margin-bottom: 28px;
+      scroll-margin-top: 28px;
     }
 
     .hero {
@@ -147,18 +148,29 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin: 20px 0 28px;
+      margin: 20px 0 0;
     }
 
     .tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 800;
       color: #fff8e9;
-      padding: 9px 12px;
+      padding: 10px 13px;
       border-radius: 999px;
       background: linear-gradient(135deg, rgba(246, 166, 35, 0.28), rgba(47, 140, 255, 0.16));
-      border: 1px solid rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);
+      text-decoration: none;
+      transition: transform 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .tag:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, rgba(255, 211, 106, 0.34), rgba(47, 140, 255, 0.22));
+      box-shadow: 0 12px 28px rgba(246, 166, 35, 0.18);
     }
 
     .cta {
@@ -268,6 +280,7 @@
       border: 1px solid rgba(255, 255, 255, 0.18);
       box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
       overflow: hidden;
+      scroll-margin-top: 24px;
     }
 
     .module-card::after {
@@ -489,13 +502,11 @@
       </p>
 
       <div class="tag-row">
-        <span class="tag">R1 取得名單</span>
-        <span class="tag">R2 接觸</span>
-        <span class="tag">R3 發掘需求</span>
-        <span class="tag">R4 說明壽險事業</span>
+        <a class="tag" href="#r1">R1 取得名單</a>
+        <a class="tag" href="#r2">R2 接觸</a>
+        <a class="tag" href="#r3">R3 發掘需求</a>
+        <a class="tag" href="#r4">R4 說明壽險事業</a>
       </div>
-
-      <a class="cta" href="#modules">查看 R 線重點</a>
     </section>
 
     <!-- 第二屏：痛點 -->
@@ -529,7 +540,7 @@
     </section>
 
     <!-- 第三屏：R線課程內容 -->
-    <section class="section" id="modules">
+    <section class="section">
       <h2 class="section-title">主任班學什麼？</h2>
       <p class="section-lead">
         以 R1～R4 為主軸，從名單、接觸、需求到事業說明，
@@ -538,7 +549,7 @@
 
       <div class="module-grid">
 
-        <article class="module-card">
+        <article class="module-card" id="r1">
           <div class="module-top">
             <div class="num">R1</div>
             <h3>取得名單</h3>
@@ -558,7 +569,7 @@
           </div>
         </article>
 
-        <article class="module-card">
+        <article class="module-card" id="r2">
           <div class="module-top">
             <div class="num">R2</div>
             <h3>接觸</h3>
@@ -578,7 +589,7 @@
           </div>
         </article>
 
-        <article class="module-card">
+        <article class="module-card" id="r3">
           <div class="module-top">
             <div class="num">R3</div>
             <h3>發掘需求</h3>
@@ -598,7 +609,7 @@
           </div>
         </article>
 
-        <article class="module-card">
+        <article class="module-card" id="r4">
           <div class="module-top">
             <div class="num">R4</div>
             <h3>說明壽險事業</h3>
